@@ -1,149 +1,102 @@
-// =============================================================================
-// 1. Dado el siguiente array, usa .filter() para generar un nuevo array
-// con los valores que sean mayor que 18
-// =============================================================================
-function getAdultsArray(ages) {
-  // Aquí tu código
+//1-Filtrar adultos: Implementa una función que tome un array de edades y use el método .filter() para generar un nuevo array con las edades que sean mayores que 18.
+function filtrarAdultos(edades) {
+  return edades.filter(edad => edad > 18);
 }
 
-// =============================================================================
-// 2. Dado el siguiente array, usa .filter() para generar un nuevo array
-// con los valores que sean par
-// =============================================================================
-function getEvenArray(numbers) {
-  // Aquí tu código
+//2-Filtrar números pares: Implementa una función que tome un array de números y use el método .filter() para generar un nuevo array con los valores que sean números pares.
+function filtrarNumerosPares(numeros) {
+  return numeros.filter(numero => numero % 2 === 0);
 }
 
-// =============================================================================
-// 3. Dado el siguiente array, usa .filter() para generar un nuevo array
-// con los streamers que tengan el gameMorePlayed = 'League of legends'
-// El objeto streamer tiene la siguiente forma
-// { name: 'Nombre', gameMorePlayed: 'League of legends' }
-// =============================================================================
-function getStreamersLOL(streamers) {
-  // Aquí tu código
+//3-Filtrar streamers de League of Legends: Implementa una función que tome un array de objetos de streamers y use el método .filter() para generar un nuevo array con los streamers que tengan gameMorePlayed igual a 'League of legends'.
+function filtrarStreamersLOL(streamers) {
+  return streamers.filter(streamer => streamer.gameMorePlayed === 'League of legends');
 }
 
-// =============================================================================
-// 4. Dado el siguiente array, usa .map() para generar un nuevo array con
-// cada uno de los valores aumentados en 10.
-// =============================================================================
-function getIncreasedArray(numbers) {
-  // Aquí tu código
+//4-Mapear valores aumentados: Implementa una función que tome un array de números y use el método .map() para generar un nuevo array con cada uno de los valores aumentados en 10.
+function mapearValoresAumentados(numeros) {
+  return numeros.map(numero => numero + 10);
 }
 
-// =============================================================================
-// 5. Dado el siguiente array, usa .map() para generar un nuevo array si hay números 
-// negativos se conviertan a positivos y si son positivos se conviertan a negativos.
-function getInvertedSignArray(numbers) {
-  // Aquí tu código
+//5-Mapear valores con signos invertidos: Implementa una función que tome un array de números y use el método .map() para generar un nuevo array en el que, si un número es negativo, se convierta en positivo, y si es positivo, se convierta en negativo.
+function mapearValoresIvertidos(numeros) {
+  return numeros.map(numero => numero * -1);
 }
 
-// =============================================================================
-// 6. Dado el siguiente array, usa .reduce() para calcular la suma de todos
-// los valores del array.
-// =============================================================================
-function getSum(numbers) {
-  // Aquí tu código
+//6-Calcular la suma con .reduce(): Implementa una función que tome un array de números y use el método .reduce() para calcular la suma de todos los valores del array.
+function calcularSuma(numeros) {
+  return numeros.reduce((acumulado, actual) => acumulado + actual, 0);
 }
 
-// =============================================================================
-// 7. Dado el siguiente array, usa .reduce() para calcular la media de todos
-// los valores del array.
-// ej. numbers = [1, 2, 3, 4, 5]
-// =============================================================================
-function getAverage(numbers) {
-  // Aquí tu código
+//7-Calcular la media con .reduce(): Implementa una función que tome un array de números y use el método .reduce() para calcular la media de todos los valores del array.
+function calcularMedia(numeros) {
+  const total = numeros.reduce((acumulado, actual) => acumulado + actual, 0);
+  return total / numeros.length;
 }
 
-// =============================================================================
-// 8. Dado el siguiente array, usa .reduce() para conseguir devolver un
-// objeto con el número de veces que se repite cada string.
-// =============================================================================
-function getRepetitions(array) {
-  // Aquí tu código
+//8-Contar repeticiones: Implementa una función que tome un array de elementos y use el método .reduce() para devolver un objeto con el número de veces que se repite cada elemento.
+function contarRepeticiones(arr) {
+  return arr.reduce((acumulador, valor) => {
+    acumulador[valor] = (acumulador[valor] || 0) + 1;
+    return acumulador;
+  }, {});
 }
 
-// =============================================================================
-// 9. Dado el siguiente array, usa .reduce() para conseguir la suma de todas
-// las edades de las personas.
-// El objeto persona tiene la siguiente forma
-// { name: 'Nombre', age: numero }
-// =============================================================================
-function getSumAges(people) {
-  // Aquí tu código
+//9-Sumar edades de personas: Implementa una función que tome un array de objetos de personas y use el método .reduce() para conseguir la suma de todas las edades de las personas.
+function sumarEdades(personas) {
+  return personas.reduce((acumulado, persona) => acumulado + persona.edad, 0);
 }
 
-// =============================================================================
-// 10. Dado el siguiente array, usa .reduce() para conseguir la suma de todas
-// las edades de las personas que tienen perro.
-// El objeto persona tiene la siguiente forma
-// { name: 'Nombre', age: numero, hasDog: boolean }
-// =============================================================================
-function getSumDogAges(people) {
-  // Aquí tu código
+//10-Sumar edades de personas con perro: Implementa una función que tome un array de objetos de personas y use el método .reduce() para conseguir la suma de todas las edades de las personas que tienen perro.
+function sumarEdadesConPerro(personas) {
+  return personas.reduce((acumulado, persona) => {
+    if (persona.tienePerro) acumulado += persona.edad;
+    return acumulado;
+  }, 0);
 }
 
-// =============================================================================
-// 11. Dado el siguiente array, usa .find() para encontrar el número 100.
-// =============================================================================
-function find100(numbers) {
-  // Aquí tu código
+//11-Encontrar el número 100: Implementa una función que tome un array de números y use el método .find() para encontrar el número 100.
+function encontrarNumero100(numeros) {
+  return numeros.find(numero => numero === 100);
 }
 
-// =============================================================================
-// 12. Dado el siguiente array, usa .sort() para ordenar los números de menor
-// a mayor.
-// =============================================================================
-function sortFromMinToMax(numbers) {
-  // Aquí tu código
+//12-Ordenar números de menor a mayor: Implementa una función que tome un array de números y use el método .sort() para ordenar los números de menor a mayor.
+function ordenarNumeros(numeros) {
+  return numeros.sort((a, b) => a - b);
 }
 
-// =============================================================================
-// 13. Dado el siguiente array, usa .some() para saber si hay algún número
-// par.
-// =============================================================================
-function thereAreEven(numbers) {
-  // Aquí tu código
+//13-Comprobar si hay números pares: Implementa una función que tome un array de números y use el método .some() para comprobar si hay al menos un número par en el array.
+function comprobarNumerosPares(numeros) {
+  return numeros.some(numero => numero % 2 === 0);
 }
 
-// =============================================================================
-// 14. Dado el siguiente array, usa .every() para saber si todas las películas
-// son del año 2018.
-// El objecto pelicula tiene la siguiente forma
-// { title: 'título', year: 2018 }
-// =============================================================================
-function areAllFilms2018(films) {
-  // Aquí tu código
+//14-Comprobar si todas las películas son del año 2018: Implementa una función que tome un array de objetos de películas y use el método .every() para comprobar si todas las películas son del año 2018.
+function comprobarPeliculas2018(peliculas) {
+  return peliculas.every(pelicula => pelicula.anio === 2018);
 }
 
-// =============================================================================
-// 15. Dado el siguiente array, usa .join() para concatenar todos los
-// nombres en una coma.
-// =============================================================================
-function joinNames(names) {
-  // Aquí tu código
+//15-Concatenar nombres con coma: Implementa una función que tome un array de nombres y use el método .join() para concatenar todos los nombres en una cadena separada por comas.
+
+function concatenarNombres(nombres) {
+  return nombres.join(', ');
 }
 
-// =============================================================================
-// 16. Dado el siguiente array, usa .includes() para saber si 'Perro' está
-// incluido en el array.
-// =============================================================================
-function thereIsADog(animals) {
-  // Aquí tu código
+//16-Comprobar si 'Perro' está incluido: Implementa una función que tome un array de animales y use el método .includes() para comprobar si 'Perro' está incluido en el array.
+
+function comprobarSiPerroEstaIncluido(animales) {
+  return animales.includes('Perro');
 }
 
-// =============================================================================
-// 17. Dado el siguiente array, usa .reverse() para darle la vuelta a los
-// elementos del array.
-// =============================================================================
-function reverseNumbers(numbers) {
-  // Aquí tu código
+//17-Darle la vuelta a elementos de un array: Implementa una función que tome un array de números y use el método .reverse() para darle la vuelta a los elementos del array.
+
+function darLaVuelta(numeros) {
+  return numeros.reverse();
 }
 
-// =============================================================================
-// 18. Dado el siguiente array, usa .from() para convertirlo en un array.
-// =============================================================================
-function fromStringToArray(string) {
-  // Aquí tu código
+//18-Convertir una cadena en un array: Implementa una función que tome una cadena y use el método .from() para convertirla en un array.
+
+function convertirCadenaEnArray(cadena) {
+  return Array.from(cadena);
 }
+
+
