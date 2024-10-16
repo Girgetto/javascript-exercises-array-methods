@@ -3,6 +3,7 @@ function getAdultsArray(ages) {
   return ages.filter(age => age > 18);
 }
 
+
 // 2. Dado el array, usa .filter() para generar un nuevo array con los valores que sean pares
 function getEvenArray(numbers) {
   return numbers.filter(number => number % 2 === 0);
