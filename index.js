@@ -3,7 +3,8 @@
 // con los valores que sean mayor que 18
 // =============================================================================
 function getAdultsArray(ages) {
-  // Aquí tu código
+  const isAdult = ages.filter((age) => age > 18);
+  return isAdult;
 }
 
 // =============================================================================
@@ -11,7 +12,8 @@ function getAdultsArray(ages) {
 // con los valores que sean par
 // =============================================================================
 function getEvenArray(numbers) {
-  // Aquí tu código
+  const pares = numbers.filter((number) => number % 2 == 0);
+  return pares;
 }
 
 // =============================================================================
@@ -21,7 +23,10 @@ function getEvenArray(numbers) {
 // { name: 'Nombre', gameMorePlayed: 'League of legends' }
 // =============================================================================
 function getStreamersLOL(streamers) {
-  // Aquí tu código
+  const playersLol = streamers.filter(
+    (player) => player.gameMorePlayed == "League of legends"
+  );
+  return playersLol;
 }
 
 // =============================================================================
@@ -29,14 +34,16 @@ function getStreamersLOL(streamers) {
 // cada uno de los valores aumentados en 10.
 // =============================================================================
 function getIncreasedArray(numbers) {
-  // Aquí tu código
+  const newArray = numbers.map((number) => number + 10);
+  return newArray;
 }
 
 // =============================================================================
-// 5. Dado el siguiente array, usa .map() para generar un nuevo array si hay números 
+// 5. Dado el siguiente array, usa .map() para generar un nuevo array si hay números
 // negativos se conviertan a positivos y si son positivos se conviertan a negativos.
 function getInvertedSignArray(numbers) {
-  // Aquí tu código
+  const newArray = numbers.map((number) => number * -1);
+  return newArray;
 }
 
 // =============================================================================
@@ -44,7 +51,8 @@ function getInvertedSignArray(numbers) {
 // los valores del array.
 // =============================================================================
 function getSum(numbers) {
-  // Aquí tu código
+  const myArray = numbers.reduce((sum, number) => sum + number, 0);
+  return myArray;
 }
 
 // =============================================================================
@@ -53,7 +61,8 @@ function getSum(numbers) {
 // ej. numbers = [1, 2, 3, 4, 5]
 // =============================================================================
 function getAverage(numbers) {
-  // Aquí tu código
+  const myArray = numbers.reduce((sum, number) => sum + number, 0);
+  return myArray / numbers.length;
 }
 
 // =============================================================================
@@ -61,7 +70,15 @@ function getAverage(numbers) {
 // objeto con el número de veces que se repite cada string.
 // =============================================================================
 function getRepetitions(array) {
-  // Aquí tu código
+  const myArray = array.reduce((cont, el) => {
+    if (cont[el]) {
+      cont[el]++;
+    } else {
+      cont[el] = 1;
+    }
+    return cont;
+  }, {});
+  return myArray;
 }
 
 // =============================================================================
@@ -71,7 +88,8 @@ function getRepetitions(array) {
 // { name: 'Nombre', age: numero }
 // =============================================================================
 function getSumAges(people) {
-  // Aquí tu código
+  const myArray = people.reduce((sum, person) => sum + person.age, 0);
+  return myArray;
 }
 
 // =============================================================================
@@ -81,14 +99,21 @@ function getSumAges(people) {
 // { name: 'Nombre', age: numero, hasDog: boolean }
 // =============================================================================
 function getSumDogAges(people) {
-  // Aquí tu código
+  const myArray = people.reduce((sum, person) => {
+    if (person.hasDog) {
+      sum = sum + person.age;
+    }
+    return sum;
+  }, 0);
+  return myArray;
 }
 
 // =============================================================================
 // 11. Dado el siguiente array, usa .find() para encontrar el número 100.
 // =============================================================================
 function find100(numbers) {
-  // Aquí tu código
+  const myArray = numbers.find((number) => number === 100);
+  return myArray;
 }
 
 // =============================================================================
@@ -96,7 +121,7 @@ function find100(numbers) {
 // a mayor.
 // =============================================================================
 function sortFromMinToMax(numbers) {
-  // Aquí tu código
+  return numbers.sort((a, b)=> a - b)
 }
 
 // =============================================================================
@@ -104,7 +129,8 @@ function sortFromMinToMax(numbers) {
 // par.
 // =============================================================================
 function thereAreEven(numbers) {
-  // Aquí tu código
+  const par = numbers.some((number)=> number % 2 === 0); 
+  return par
 }
 
 // =============================================================================
@@ -114,7 +140,8 @@ function thereAreEven(numbers) {
 // { title: 'título', year: 2018 }
 // =============================================================================
 function areAllFilms2018(films) {
-  // Aquí tu código
+  const is2018 = films.every((film)=> film.year === 2018); 
+  return is2018
 }
 
 // =============================================================================
@@ -122,7 +149,7 @@ function areAllFilms2018(films) {
 // nombres en una coma.
 // =============================================================================
 function joinNames(names) {
-  // Aquí tu código
+  return names.join(", "); 
 }
 
 // =============================================================================
@@ -130,7 +157,7 @@ function joinNames(names) {
 // incluido en el array.
 // =============================================================================
 function thereIsADog(animals) {
-  // Aquí tu código
+  return animals.includes('Perro')
 }
 
 // =============================================================================
@@ -138,12 +165,12 @@ function thereIsADog(animals) {
 // elementos del array.
 // =============================================================================
 function reverseNumbers(numbers) {
-  // Aquí tu código
+  return numbers.reverse(); 
 }
 
 // =============================================================================
 // 18. Dado el siguiente array, usa .from() para convertirlo en un array.
 // =============================================================================
 function fromStringToArray(string) {
-  // Aquí tu código
+  return Array.from(string)
 }
