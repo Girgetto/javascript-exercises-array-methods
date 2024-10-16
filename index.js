@@ -3,8 +3,11 @@
 // con los valores que sean mayor que 18
 // =============================================================================
 function getAdultsArray(ages) {
-  // Aquí tu código ejemplo
+  return ages.filter((age) => {
+    return age > 18;
+  });
 }
+console.log(getAdultsArray([15, 20, 18, 22, 17]));
 
 // =============================================================================
 // 2. Dado el siguiente array, usa .filter() para generar un nuevo array
@@ -33,7 +36,7 @@ function getIncreasedArray(numbers) {
 }
 
 // =============================================================================
-// 5. Dado el siguiente array, usa .map() para generar un nuevo array si hay números 
+// 5. Dado el siguiente array, usa .map() para generar un nuevo array si hay números
 // negativos se conviertan a positivos y si son positivos se conviertan a negativos.
 function getInvertedSignArray(numbers) {
   // Aquí tu código
