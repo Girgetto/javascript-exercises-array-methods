@@ -4,6 +4,10 @@
 // =============================================================================
 function getAdultsArray(ages) {
   // Aquí tu código
+  const adults = ages.filter(function(age) {
+    return age > 18;
+  })
+  return adults
 }
 
 // =============================================================================
@@ -12,6 +16,10 @@ function getAdultsArray(ages) {
 // =============================================================================
 function getEvenArray(numbers) {
   // Aquí tu código
+  const evenNumbers = numbers.filter((num)=>{
+    return num % 2 === 0;
+  })
+  return evenNumbers
 }
 
 // =============================================================================
@@ -22,6 +30,10 @@ function getEvenArray(numbers) {
 // =============================================================================
 function getStreamersLOL(streamers) {
   // Aquí tu código
+  const lol = streamers.filter(function(streamer){
+    return streamer.gameMorePlayed == 'League of legends'
+  })
+  return lol
 }
 
 // =============================================================================
@@ -30,6 +42,10 @@ function getStreamersLOL(streamers) {
 // =============================================================================
 function getIncreasedArray(numbers) {
   // Aquí tu código
+  const ten = numbers.map(function(num){
+    return num + 10;
+  })
+  return ten;
 }
 
 // =============================================================================
@@ -37,6 +53,10 @@ function getIncreasedArray(numbers) {
 // negativos se conviertan a positivos y si son positivos se conviertan a negativos.
 function getInvertedSignArray(numbers) {
   // Aquí tu código
+  const invert = numbers.map(function(num){
+    return num*-1
+  })
+  return invert;
 }
 
 // =============================================================================
@@ -45,6 +65,8 @@ function getInvertedSignArray(numbers) {
 // =============================================================================
 function getSum(numbers) {
   // Aquí tu código
+  const sum = numbers.reduce((acc,num)=>acc + num, 0)
+  return sum
 }
 
 // =============================================================================
@@ -54,6 +76,8 @@ function getSum(numbers) {
 // =============================================================================
 function getAverage(numbers) {
   // Aquí tu código
+  const average = numbers.reduce((acc, num) => acc + num, 0)
+  return average / numbers.length
 }
 
 // =============================================================================
@@ -62,6 +86,7 @@ function getAverage(numbers) {
 // =============================================================================
 function getRepetitions(array) {
   // Aquí tu código
+
 }
 
 // =============================================================================
@@ -72,6 +97,8 @@ function getRepetitions(array) {
 // =============================================================================
 function getSumAges(people) {
   // Aquí tu código
+  const sumAge = people.reduce((acc, people) => acc + people.age, 0)
+  return sumAge
 }
 
 // =============================================================================
@@ -82,6 +109,13 @@ function getSumAges(people) {
 // =============================================================================
 function getSumDogAges(people) {
   // Aquí tu código
+  const sumAgeWithDog = people.reduce((acc, person) => {
+      if (person.hasDog){
+        acc = acc + person.age
+      }
+      return acc
+    }, 0)
+  return sumAgeWithDog
 }
 
 // =============================================================================
@@ -89,6 +123,8 @@ function getSumDogAges(people) {
 // =============================================================================
 function find100(numbers) {
   // Aquí tu código
+  const num = numbers.find(elemento => elemento == 100)
+  return num
 }
 
 // =============================================================================
@@ -97,6 +133,7 @@ function find100(numbers) {
 // =============================================================================
 function sortFromMinToMax(numbers) {
   // Aquí tu código
+return numbers.sort((a,b) => a - b)
 }
 
 // =============================================================================
@@ -105,6 +142,8 @@ function sortFromMinToMax(numbers) {
 // =============================================================================
 function thereAreEven(numbers) {
   // Aquí tu código
+  const even = numbers.some(num => num % 2 === 0);
+  return even 
 }
 
 // =============================================================================
@@ -115,6 +154,8 @@ function thereAreEven(numbers) {
 // =============================================================================
 function areAllFilms2018(films) {
   // Aquí tu código
+  const film = films.every(year => films.year == 2018)
+  return film
 }
 
 // =============================================================================
@@ -123,6 +164,7 @@ function areAllFilms2018(films) {
 // =============================================================================
 function joinNames(names) {
   // Aquí tu código
+  return names.join(", ")
 }
 
 // =============================================================================
@@ -131,6 +173,8 @@ function joinNames(names) {
 // =============================================================================
 function thereIsADog(animals) {
   // Aquí tu código
+  const elementExist = animals.includes("Perro")
+  return elementExist;
 }
 
 // =============================================================================
@@ -139,6 +183,7 @@ function thereIsADog(animals) {
 // =============================================================================
 function reverseNumbers(numbers) {
   // Aquí tu código
+  return numbers.reverse()
 }
 
 // =============================================================================
@@ -146,4 +191,6 @@ function reverseNumbers(numbers) {
 // =============================================================================
 function fromStringToArray(string) {
   // Aquí tu código
+  const convertArray = Array.from(string)
+  return convertArray
 }
