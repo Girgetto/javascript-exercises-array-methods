@@ -4,7 +4,17 @@
 // =============================================================================
 function getAdultsArray(ages) {
   // Aquí tu código
+
+  const over18Array = ages.filter(function(ages) {
+    return ages >18
+  
+  });
+  console.log(over18Array)
+  return over18Array;
 }
+
+
+
 
 // =============================================================================
 // 2. Dado el siguiente array, usa .filter() para generar un nuevo array
