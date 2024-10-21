@@ -69,15 +69,15 @@ function getAverage(numbers) {
 // objeto con el número de veces que se repite cada string.
 // =============================================================================
 function getRepetitions(array) {
-  const repetitions = array.reduce((a, b) => {
-    if (a[b]) {
-      a[b]++;
+  return array.reduce((acc, act) => {
+    if (acc[act]) {
+      acc[act]++; 
+    } else {
+      acc[act] = 1; 
     }
-    else {
-      a[b] = 1;
-    // Aquí tu código
+    return act; 
+  }, {});
 }
-
 
 // =============================================================================
 // 9. Dado el siguiente array, usa .reduce() para conseguir la suma de todas
@@ -86,7 +86,8 @@ function getRepetitions(array) {
 // { name: 'Nombre', age: numero }
 // =============================================================================
 function getSumAges(people) {
-  // Aquí tu código
+ const EdadesSumadas = people.reduce((total, person) => total + person.age, 0);
+ return EdadesSumadas // Aquí tu código
 }
 
 // =============================================================================
@@ -96,8 +97,13 @@ function getSumAges(people) {
 // { name: 'Nombre', age: numero, hasDog: boolean }
 // =============================================================================
 function getSumDogAges(people) {
-  // Aquí tu código
-}
+  const EdadesSumadas = people.reduce((total, person) => {
+    if (person.hasDog) {
+      return total + person.age;
+    } return total
+}, 0)
+  return EdadesSumadas // Aquí tu código
+ }
 
 // =============================================================================
 // 11. Dado el siguiente array, usa .find() para encontrar el número 100.
