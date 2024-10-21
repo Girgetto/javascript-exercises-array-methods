@@ -75,8 +75,8 @@ function getRepetitions(array) {
     } else {
       acc[act] = 1; 
     }
-    return act; 
-  }, {});
+    return acc; 
+  }, {}); 
 }
 
 // =============================================================================
