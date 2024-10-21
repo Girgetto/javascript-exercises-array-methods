@@ -109,7 +109,8 @@ function getSumDogAges(people) {
 // 11. Dado el siguiente array, usa .find() para encontrar el número 100.
 // =============================================================================
 function find100(numbers) {
-  // Aquí tu código
+const numero100 = numbers.find(numero => numero == 100);
+return numero100
 }
 
 // =============================================================================
@@ -117,7 +118,7 @@ function find100(numbers) {
 // a mayor.
 // =============================================================================
 function sortFromMinToMax(numbers) {
-  // Aquí tu código
+ return numbers.sort((a, b) => a - b); // Aquí tu código
 }
 
 // =============================================================================
@@ -125,7 +126,8 @@ function sortFromMinToMax(numbers) {
 // par.
 // =============================================================================
 function thereAreEven(numbers) {
-  // Aquí tu código
+  const result = numbers.some((number) => number % 2 === 0);
+  return result;// Aquí tu código
 }
 
 // =============================================================================
@@ -135,7 +137,8 @@ function thereAreEven(numbers) {
 // { title: 'título', year: 2018 }
 // =============================================================================
 function areAllFilms2018(films) {
-  // Aquí tu código
+  const son2018 = films.every(film => films.year == 2018);
+  return son2018// Aquí tu código
 }
 
 // =============================================================================
@@ -143,7 +146,8 @@ function areAllFilms2018(films) {
 // nombres en una coma.
 // =============================================================================
 function joinNames(names) {
-  // Aquí tu código
+  const todoslosnames = names.join(", ");
+  return todoslosnames // Aquí tu código
 }
 
 // =============================================================================
@@ -151,7 +155,8 @@ function joinNames(names) {
 // incluido en el array.
 // =============================================================================
 function thereIsADog(animals) {
-  // Aquí tu código
+  const isthereaDog = animals.includes('Perro');
+  return isthereaDog// Aquí tu código
 }
 
 // =============================================================================
@@ -159,12 +164,13 @@ function thereIsADog(animals) {
 // elementos del array.
 // =============================================================================
 function reverseNumbers(numbers) {
-  // Aquí tu código
+  return numbers.reverse();// Aquí tu código
 }
 
 // =============================================================================
 // 18. Dado el siguiente array, usa .from() para convertirlo en un array.
 // =============================================================================
 function fromStringToArray(string) {
-  // Aquí tu código
+  const array = Array.from(string);
+  return array // Aquí tu código
 }
