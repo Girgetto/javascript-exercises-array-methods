@@ -40,7 +40,7 @@ function getStreamersLOL(streamers) {
   console.log(lolArray);
   return lolArray;
 }
-console.log(lolArray(streamers));
+
 
 // =============================================================================
 // 4. Dado el siguiente array, usa .map() para generar un nuevo array con
@@ -55,7 +55,7 @@ function getIncreasedArray(numbers) {
   //
   return constMas10Array;
 }
-console.log(constMas10Array);
+//console.log(constMas10Array);
 
 // =============================================================================
 // 5. Dado el siguiente array, usa .map() para generar un nuevo array si hay números
@@ -89,8 +89,8 @@ function getSum(numbers) {
   return reduceSum;
 }
 
-getSum(numbers);
-console.log(getSum(numbers));
+//getSum(numbers);
+//console.log(getSum(numbers));  --- WHY DOESN"T THIS PRINT????????
 
 // =============================================================================
 // 7. Dado el siguiente array, usa .reduce() para calcular la media de todos
@@ -157,8 +157,8 @@ function getSumDogAges(people) {
     }
     return rtotal;
   }, 0);
-console.log(dogsOwners);
-return (dogsOwners);
+  console.log(dogsOwners);
+  return dogsOwners;
 }
 
 //console.log(getSumDogAges(people));
@@ -167,10 +167,9 @@ return (dogsOwners);
 // =============================================================================
 function find100(numbers) {
   // Aquí tu código
-  const find100 = numbers.find(num => num === 100);
+  const find100 = numbers.find((num) => num === 100);
   console.log(find100);
   return find100;
-
 }
 
 // =============================================================================
@@ -179,12 +178,12 @@ function find100(numbers) {
 // =============================================================================
 function sortFromMinToMax(numbers) {
   // Aquí tu código
-   numbers.sort(function(a,b) {
+  numbers.sort(function (a, b) {
     return a - b;
-   });
+  });
 
-   console.log(numbers);
-   return numbers;
+  console.log(numbers);
+  return numbers;
 }
 
 // =============================================================================
@@ -193,10 +192,21 @@ function sortFromMinToMax(numbers) {
 // =============================================================================
 function thereAreEven(numbers) {
   // Aquí tu código
-
-
-  
+  return numbers.some(function (number) {
+    return number % 2 === 0; // A number is even if it is divisible by 2 with no remainder
+  });
 }
+
+//const myArray = [10, 15, 20, 25, 30];
+//const result = myArray.some(elemento => elemento > 25); // Devuelve true
+/* or below without arrow----->
+const myArray = [10, 15, 20, 25, 30];
+const result = myArray.some(function(elemento) {
+  return elemento > 25;
+});
+
+
+*/
 
 // =============================================================================
 // 14. Dado el siguiente array, usa .every() para saber si todas las películas
@@ -206,6 +216,10 @@ function thereAreEven(numbers) {
 // =============================================================================
 function areAllFilms2018(films) {
   // Aquí tu código
+  console.log(films);
+  return films.every(function (film) {
+    return film.year === 2018;
+  });
 }
 
 // =============================================================================
@@ -214,6 +228,8 @@ function areAllFilms2018(films) {
 // =============================================================================
 function joinNames(names) {
   // Aquí tu código
+  console.log(names);
+  return names.join(", ");
 }
 
 // =============================================================================
@@ -222,6 +238,8 @@ function joinNames(names) {
 // =============================================================================
 function thereIsADog(animals) {
   // Aquí tu código
+  console.log(animals);
+  return animals.includes("Perro");
 }
 
 // =============================================================================
@@ -230,6 +248,8 @@ function thereIsADog(animals) {
 // =============================================================================
 function reverseNumbers(numbers) {
   // Aquí tu código
+  console.log(numbers);
+  return numbers.reverse();
 }
 
 // =============================================================================
@@ -237,4 +257,10 @@ function reverseNumbers(numbers) {
 // =============================================================================
 function fromStringToArray(string) {
   // Aquí tu código
+  console.log(string);
+  const newArray = Array.from(string);
+  return newArray;
 }
+
+
+//done!  =) 
