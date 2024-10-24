@@ -263,4 +263,5 @@ function fromStringToArray(string) {
 }
 
 
-//done!  =) 
+//done! Jasmine is green= 0 
+//   =) 
